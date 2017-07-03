@@ -11,11 +11,6 @@ import (
 	"github.com/cheekybits/is"
 )
 
-const (
-	examplesHash = "QmVtU7ths96fMgZ8YSZAbKghyieq7AjxNdcqyVzxTt3qVe"
-	shellUrl     = "localhost:5001"
-)
-
 func TestAdd(t *testing.T) {
 	is := is.New(t)
 	s := NewShell(shellUrl)

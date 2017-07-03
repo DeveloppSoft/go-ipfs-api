@@ -6,13 +6,12 @@ import (
 )
 
 // Publish updates a mutable name to point to a given value
-func (s *Shell) Publish(node string, value string) error {
-	args := []string{value}
-	if node != "" {
-		args = []string{node, value}
-	}
+func (s *Shell) Publish(value string, lifetime string) error {
+	req := NewRequest(context.Background(), s.url, "name/publish")
+	req.Opts["arg"] = value
+	req.Opts["lifetime"] = lifetime
 
-	resp, err := s.newRequest(context.Background(), "name/publish", args...).Send(s.httpcli)
+	resp, err := req.Send(s.httpcli)
 	if err != nil {
 		return err
 	}
