@@ -16,7 +16,7 @@ import (
 
 	ma "github.com/multiformats/go-multiaddr"
 	manet "github.com/multiformats/go-multiaddr-net"
-	files "github.com/whyrusleeping/go-multipart-files"
+	files "github.com/DeveloppSoft/go-multipart-files"
 	tar "github.com/whyrusleeping/tar-utils"
 )
 
